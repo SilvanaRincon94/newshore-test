@@ -1,0 +1,71 @@
+@import '../../../../assets/scss/config/colors';
+@import '../../../../assets/scss/config/sizes';
+@import '../../../../assets/scss/config/mixins';
+
+.main-banner{
+  position: relative;
+  .block-image{
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    height: 44.8rem;
+    overflow: hidden;
+    img{
+      max-width: 1440px;
+      transform: translate(18px, -12px);
+    }
+  }
+  .block-content{
+    color: color(grayscale, white);
+    left: 1.4rem;
+    max-width: 35rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    &__title{
+      font-size: map-get($sizes, medium );
+      font-weight: bold;
+    }
+    &__text{
+      font-size: map-get($sizes, small );
+      line-height: 1.2;
+      margin-bottom: 3.6rem;
+    }
+  }
+}
+@include mq-min(lg){
+  .main-banner{
+    .block-image{
+      img{
+        transform: translate(0, -12px);
+      }
+    }
+    .block-content{
+      left: 9.6rem;
+      max-width: 56.4rem;
+      &__title{
+        font-size: map-get($sizes, huge );
+      }
+      &__text{
+        font-size: map-get($sizes, thumb );
+        max-width: 56.4rem;
+      }
+    }
+  }
+}
+@include mq-min(xxl){
+  .main-banner{
+    .block-image{
+      img{
+        max-width: none;
+        width: 100%;
+      }
+    }
+    .block-content{
+      left: 50%;
+      max-width: 124.6rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

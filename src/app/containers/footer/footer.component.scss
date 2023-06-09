@@ -1,0 +1,164 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/sizes';
+@import '../../../assets/scss/config/mixins';
+
+.footer{
+  background: color(background, dark);
+  &-info{
+    padding-bottom: 3.7rem;
+    .logo{
+      padding: 3.6rem 0 5.5rem 0.7rem;
+      img{
+        height: auto;
+        width: 18rem;
+      }
+    }
+    .menu-content{
+      padding-left: 0.4rem;
+      .subtitle{
+        font-size: map-get($sizes, mbase );
+        font-weight: bold;
+      }
+      .menu-list{
+        padding-left: 0.8rem;
+      }
+      &__network{
+        margin-bottom: 6.3rem;
+        .subtitle{
+          margin-bottom: 1rem;
+        }
+        .menu-list{
+          display: flex;
+          gap: 1.6rem;
+          padding-left: 0;
+          a{
+            font-size: 0;
+            i{
+              font-size: 5rem;
+            }
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      &__list{
+        margin-bottom: 2.5rem;
+        .subtitle{
+          margin-bottom: 1.2rem;
+        }
+        .menu-list{
+          &__item{
+            a{
+              line-height: 2.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-bottom{
+    background: color(background, light);
+  }
+  .legal__menu{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.7rem 0;
+    &-item{
+      padding: 0 1rem;
+      position: relative;
+      &::before{
+        background: color(grayscale, gray-2);
+        content: '';
+        display: block;
+        height: 1.4rem;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.1rem;
+      }
+      &:last-child{
+        &::before{
+          display: none;
+        }
+      }
+      a{
+        font-size: map-get($sizes, small );
+        color: color(grayscale, gray-2);
+      }
+    }
+  }
+}
+@include mq-min(md){
+  .footer{
+    &-info{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2.7rem;
+      padding-top: 5.3rem;
+      .logo{
+        align-items: center;
+        display: flex;
+        padding: 0 0 0 0.8rem;
+      }
+      .menu-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        max-width: 56.6rem;
+        &__network{
+          margin-bottom: 0;
+          order: 4;
+        }
+        &__list{
+          margin-bottom: -0.9rem;
+          min-width: 18.2rem;
+        }
+      }
+    }
+    .legal__menu{
+      padding: 1.2rem 0;
+    }
+  }
+}
+@include mq-min(lg){
+  .footer{
+    &-info{
+      .menu-content{
+        gap: 2rem;
+        max-width: 62rem;
+        .subtitle{
+          font-size: map-get($sizes, thumb );
+        }
+        &__network{
+          .subtitle{
+            font-size: map-get($sizes, mbase );
+          }
+        }
+        &__list{
+          min-width: 19.2rem;
+          .menu-list{
+            &__item{
+              a{
+                line-height: 3.4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include mq-min(xl){
+  .footer{
+    &-info{
+      .logo{
+        img{
+          height: auto;
+          width: 29.9rem;
+        }
+      }
+    }
+  }
+}

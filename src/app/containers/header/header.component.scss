@@ -1,0 +1,191 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/sizes';
+@import '../../../assets/scss/config/mixins';
+
+.header {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 5rem;
+    justify-content: space-between;
+
+    .btn-navbar {
+      i {
+        font-size: map-get($sizes , mbase);
+      }
+    }
+
+    .btn-language {
+      font-size: 0;
+
+      i {
+        font-size: map-get($sizes, base);
+      }
+    }
+
+    .logo {
+      line-height: 0;
+
+      img {
+        height: auto;
+        width: 10.3rem;
+      }
+    }
+  }
+}
+
+@include mq-max(lg) {
+  .header {
+    .container {
+      position: relative;
+
+      .header-menu {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        height: 5rem;
+        justify-content: space-between;
+        margin-bottom: 4.8rem;
+
+        .btn-close {
+          i {
+            font-size: map-get($sizes , mbase);
+          }
+        }
+      }
+
+      .main-menu {
+        background: color(grayscale, white);
+        height: 100vh;
+        right: 100%;
+        padding: 0 1.6rem;
+        position: fixed;
+        top: 0;
+        transition: all .8s ease;
+        width: 100%;
+        z-index: 1;
+
+        &.menu-open {
+          right: 0;
+        }
+
+        .menu-list{
+          &__item{
+            align-items: center;
+            border-bottom: 0.1rem solid color(grayscale, gray-1);
+            display: flex;
+            height: 7.7rem;
+            a{
+              font-size: map-get($sizes, thumb );
+            }
+          }
+        }
+
+        .submenu-content {
+          background: color(grayscale, white);
+          height: 100vh;
+          right: 100%;
+          padding: 0 1.6rem;
+          position: fixed;
+          top: 0;
+          transition: all .8s ease;
+          width: 100%;
+          z-index: 1;
+
+          &.open-submenu {
+            right: 0;
+          }
+          .subtitle{
+            font-weight: bold;
+            margin-bottom: 2.5rem;
+          }
+          .submenu-list{
+            padding-left: 2.8rem;
+            &__item{
+              margin-bottom: 1.9rem;
+              a{
+                font-size: map-get($sizes, base );
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-open {
+    display: block;
+  }
+}
+
+@include mq-min(lg) {
+  .header {
+    .only-mobile {
+      display: none;
+    }
+    .container{
+      height: 8rem;
+      .logo {
+        img {
+          width: 15.4rem;
+        }
+      }
+      .btn-language {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: map-get($sizes, small);
+        gap: 0.6rem;
+      }
+      .menu-container{
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: calc(100% - 15.4rem);
+        .main-menu{
+          padding-left: 6.7rem;
+          .menu-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.8rem;
+            &__item{
+              position: relative;
+              a{
+                cursor: pointer;
+              }
+            }
+          }
+          .submenu-content{
+            background: color(grayscale, white);
+            border-radius: 1.6rem;
+            box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
+            left: 50%;
+            opacity: 0;
+            padding: 2.8rem 3rem;
+            position: absolute;
+            top: 4rem;
+            transform: translateX(-50%);
+            width: 25rem;
+            z-index: 1;
+            &.open-submenu {
+              opacity: 1;
+            }
+            &::before{
+              background: url('/assets/images/polygon.png') center no-repeat;
+              content: '';
+              display: block;
+              height: 24px;
+              left: 50%;
+              position: absolute;
+              top: -22px;
+              transform: translateX(-50%);
+              width: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import '../../../../assets/scss/config/colors';
+@import '../../../../assets/scss/config/sizes';
+@import '../../../../assets/scss/config/mixins';
+
+.offers-block{
+  padding: 3.1rem 0.5rem;
+  &__title{
+    color: color(primary, 400);
+    font-size: map-get($sizes, half );
+    font-weight: bold;
+    margin-bottom: 1.6rem;
+  }
+  &__grid{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@include mq-min(lg){
+  .offers-block{
+    &__grid{
+      flex-direction: row;
+      .card{
+        width: 32%;
+      }
+    }
+  }
+}
+@include mq-min(xl){
+  .offers-block{
+    &__grid{
+      flex-direction: row;
+      .card{
+        width: 24%;
+        &:nth-child(2){
+          width: 49%;
+          &::before{
+            background: url('/assets/images/vector-3.png') left bottom no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

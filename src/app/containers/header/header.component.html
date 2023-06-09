@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="container">
+    <button (click)="openMenu()" class="btn-navbar only-mobile">
+      <i class="icon-menu"></i>
+    </button>
+    <div class="logo">
+      <a href="/">
+        <img src="/assets/images/logo.svg" alt="Logo AirLine to the people">
+      </a>
+    </div>
+    <div class="menu-container">
+      <nav class="main-menu" [ngClass]="{'menu-open': menuOpen}">
+        <div class="only-mobile header-menu">
+          <button class="btn-close" (click)="closeMenu()"><i class="icon-close"></i></button>
+          <div class="logo">
+            <a href="/" aria-label="go to home web site">
+              <img src="/assets/images/logo.svg" alt="Logo AirLine to the people">
+            </a>
+          </div>
+          <button class="btn-language"><i class="icon-language"></i>English</button>
+        </div>
+        <ul class="menu-list">
+          <li class="menu-list__item"><a href="">Check-in</a></li>
+          <li class="menu-list__item"><a href="">Manage my booking</a></li>
+          <li class="menu-list__item"><a (click)="openSubMenu()">Information
+              <div class="submenu-content" [ngClass]="{'open-submenu': subMenuOpen}">
+                <div class="only-mobile header-menu">
+                  <button class="btn-close" (click)="closeSubMenu()"><i class="icon-close"></i></button>
+                  <div class="logo">
+                    <a href="/">
+                      <img src="/assets/images/logo.svg" alt="Logo AirLine to the people">
+                    </a>
+                  </div>
+                  <button class="btn-language"><i class="icon-language"></i>English</button>
+                </div>
+                <p class="subtitle only-mobile">Information</p>
+                <ul class="submenu-list">
+                  <li class="submenu-list__item"><a href="">Help center</a></li>
+                  <li class="submenu-list__item"><a href="">Flight state</a></li>
+                  <li class="submenu-list__item"><a href="">Airplanes</a></li>
+                  <li class="submenu-list__item"><a href="">Routes</a></li>
+                </ul>
+              </div>
+            </a></li>
+        </ul>
+      </nav>
+      <div class="language">
+        <button class="btn-language"><i class="icon-language"></i>English</button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,39 @@
+$font-size         : 1.6rem;
+$font-primary      : 'Roboto', sans-serif;
+$font-icon         : 'iconFont';
+
+// ==========================================================================
+// Importación de la fuente de íconos
+// ==========================================================================
+
+@font-face {
+  font-family: 'iconFont';
+  src:  url('/assets/fonts/iconFont/iconFont.eot?5c9yfz');
+  src:  url('/assets/fonts/iconFont/iconFont.eot?5c9yfz#iefix') format('embedded-opentype'),
+    url('/assets/fonts/iconFont/iconFont.ttf?5c9yfz') format('truetype'),
+    url('/assets/fonts/iconFont/iconFont.woff?5c9yfz') format('woff'),
+    url('/assets/fonts/iconFont/iconFont.svg?5c9yfz#iconFont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+// ==========================================================================
+// Importación de la fuente principal
+// ==========================================================================
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+      url('/assets/fonts/Roboto/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+      url('/assets/fonts/Roboto/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,48 @@
+// ==========================================================================
+// Anchos minimos (min-width) : @include mq-min(sm) {}
+// ==========================================================================
+@mixin mq-min($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// ==========================================================================
+// Anchos maximos (max-width) : @include mq-max(sm) {}
+// ==========================================================================
+@mixin mq-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Funcion que define los colores del sistema basado en el mapa de colores establecido en las variables
+@function color($color, $tone) {
+  @if map-has-key($colors, $color) {
+    $color: map-get($colors, $color);
+    @if map-has-key($color, $tone) {
+      $tone: map-get($color, $tone);
+      @return $tone;
+    }
+  }
+}
+
+// ==========================================================================
+// Mixins para Grid : @include grid (1rem, display);
+// ==========================================================================
+
+@mixin grid($gap, $display,$grid-colums){
+  display: grid;
+  grid-gap: $gap;
+  grid-template-columns: $grid-colums;
+}
