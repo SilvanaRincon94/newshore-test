@@ -60,6 +60,7 @@
     .block-image{
       img{
         max-width: none;
+        transform: translate(0, calc(448px - 48%));
         width: 100%;
       }
     }
