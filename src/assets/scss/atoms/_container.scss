@@ -8,15 +8,6 @@
       right: 1rem;
    };
    width: 100%;
-   &__full {
-      padding: 0;
-      @include mq-min(lg) {
-         padding: {
-            left: 2rem;
-            right: 2rem;
-         };
-      }
-   }
 }
 
 

@@ -4,15 +4,15 @@
       Offers
     </h2>
     <div class="offers-block__grid">
-      <div class="card" *ngFor="let card of cardPlace">
+      <article class="card" *ngFor="let card of cardPlace">
         <div class="card-image">
-          <img [src]="card.image" width="{{card.imageWidth}}" height="{{card.imageHeight}}" alt="banner image">
+          <img [src]="card.image" alt="banner image of place">
         </div>
         <div class="card-content">
-          <p class="card-content__city">{{card.city}}</p>
-          <p class="card-content__price">From {{card.price}}</p>
+          <h3 class="card-content__city">{{card.city}}</h3>
+          <h4 class="card-content__price">From {{card.price}}</h4>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>

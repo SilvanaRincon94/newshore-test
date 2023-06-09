@@ -3,6 +3,16 @@
 @import '../../../assets/scss/config/mixins';
 
 .header {
+  height: 5rem;
+
+  &-content{
+    background: color(grayscale, white);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
   .container {
     align-items: center;
     display: flex;
@@ -121,6 +131,7 @@
 
 @include mq-min(lg) {
   .header {
+    height: 8rem;
     .only-mobile {
       display: none;
     }

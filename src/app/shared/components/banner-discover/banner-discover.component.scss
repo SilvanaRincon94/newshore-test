@@ -2,8 +2,10 @@
 @import '../../../../assets/scss/config/sizes';
 @import '../../../../assets/scss/config/mixins';
 
-.banner-discover {
-  padding: 0.5rem 0.4rem 6.4rem;
+.banner-discover{
+  &.container{
+  padding: 1.5rem 1.4rem 7.4rem;
+  }
 
   .block-content {
     background: linear-gradient(180deg, #181823 39.26%, #537FE7 100%);
@@ -51,8 +53,6 @@
 }
 @include mq-min(lg){
   .banner-discover {
-    padding: 0.5rem 0.4rem 6.4rem;
-
 
     .block-content {
       height: 38.6rem;

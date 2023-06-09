@@ -48,6 +48,14 @@
 @include mq-min(lg){
   .card{
     &::before{
+      background: url('/assets/images/vector-2.png') left 10px bottom no-repeat;
+    }
+  }
+}
+
+@include mq-min(xl){
+  .card{
+    &::before{
       background: url('/assets/images/vector-2.png') left bottom no-repeat;
     }
   }
