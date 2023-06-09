@@ -4,31 +4,13 @@
       Offers
     </h2>
     <div class="offers-block__grid">
-      <div class="card">
+      <div class="card" *ngFor="let card of cardPlace">
         <div class="card-image">
-          <img src="/assets/images/chicago.jpg" alt="banner image">
+          <img [src]="card.image" width="{{card.imageWidth}}" height="{{card.imageHeight}}" alt="banner image">
         </div>
         <div class="card-content">
-          <p class="card-content__city">Chicago</p>
-          <p class="card-content__price">From $600.00</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/assets/images/porto.jpg" alt="banner image">
-        </div>
-        <div class="card-content">
-          <p class="card-content__city">Porte</p>
-          <p class="card-content__price">From $600.00</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="/assets/images/mire.jpg" alt="banner image">
-        </div>
-        <div class="card-content">
-          <p class="card-content__city">Chicago</p>
-          <p class="card-content__price">From $600.00</p>
+          <p class="card-content__city">{{card.city}}</p>
+          <p class="card-content__price">From {{card.price}}</p>
         </div>
       </div>
     </div>
